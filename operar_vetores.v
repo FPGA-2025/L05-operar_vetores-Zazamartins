@@ -5,5 +5,14 @@ module operar_vetores(
     output saida_or_logico,
     output [5:0] saida_not
 );
-	//insira seu código aqui
+
+    // OR bit a bit entre 'a' e 'b'
+    assign saida_or_bit_a_bit = a | b;
+
+    // OR lógico entre 'a' e 'b'
+    assign saida_or_logico = (a != 3'b000) || (b != 3'b000); // PELO MENOS UM DOS VETORES TEM QUER != DE 3'b000
+
+    // NOT de 'b' concatenado com 'a'
+    assign saida_not = ~{b, a};
+
 endmodule
